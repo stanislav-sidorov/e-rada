@@ -1,0 +1,22 @@
+{
+  "name": "e-rada",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanislav-sidorov/e-rada.git"
+  },
+  "author": "Andrii Vorobiov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanislav-sidorov/e-rada/issues"
+  },
+  "homepage": "https://github.com/stanislav-sidorov/e-rada#readme",
+  "dependencies": {
+    "koa": "^2.6.2"
+  }
+}
