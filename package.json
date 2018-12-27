@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/stanislav-sidorov/e-rada#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "koa": "^2.6.2"
   }
 }
