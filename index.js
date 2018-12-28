@@ -10,16 +10,20 @@ http.createServer(function (req, res) {
   res.end();
 }).listen(8000);
 
- 
 
-var request = new XMLHttpRequest();
-request.open('GET', 'https://data.rada.gov.ua/ogd/etc/global_stat.json', true);
+const axios = require('axios');
+axios.get('https://data.rada.gov.ua/ogd/etc/global_stat.json', {
+    params: {
+      ID: 12345
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  }); 
 
-request.onload = function () {
-	var data = JSON.parse(this.response);
-	for (var i = 0; i < data.length; i++) {
-		console.log(data[i].ids);
-	}
-}
-
-request.send();
