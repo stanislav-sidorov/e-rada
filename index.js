@@ -1,20 +1,28 @@
-function hello() {
-console.log(`Hello node.js!\nUsing ${process.version} node version.`);
-}
-hello();
+const Koa = require('koa');
+var Router = require('koa-router');
+const app = new Koa();
+var router = new Router();
 
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.write('Done');
-  res.end();
-}).listen(8000);
+router.get('/api/test', (ctx, next) => {
+    ctx.body = 'test';
+});
 
+router.get('/api/test1', (ctx, next) => {
+    ctx.body = 'test1';
+});
+
+app
+    .use(router.routes())
+    .use(router.allowedMethods());
+
+app.listen(8000);
+
+ /*
 
 const axios = require('axios');
 axios.get('https://data.rada.gov.ua/ogd/etc/global_stat.json', {
-    params: {
-      ID: 12345
+    ids: {
+      mps: 3
     }
   })
   .then(function (response) {
@@ -26,4 +34,4 @@ axios.get('https://data.rada.gov.ua/ogd/etc/global_stat.json', {
   .then(function () {
     // always executed
   }); 
-
+*/
