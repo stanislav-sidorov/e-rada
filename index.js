@@ -17,12 +17,12 @@ app
 
 app.listen(8000);
 
- /*
+
 
 const axios = require('axios');
 axios.get('https://data.rada.gov.ua/ogd/etc/global_stat.json', {
     ids: {
-      mps: 3
+      "mps": 4
     }
   })
   .then(function (response) {
@@ -34,4 +34,3 @@ axios.get('https://data.rada.gov.ua/ogd/etc/global_stat.json', {
   .then(function () {
     // always executed
   }); 
-*/
