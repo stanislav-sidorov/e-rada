@@ -1,0 +1,13 @@
+doctype html
+html(lang='en')
+    head
+        title Jade
+        script(type='text/javascript').
+        link(rel='stylehseet', link='/style.css').
+
+    body
+        h1 Депутаты и их машины
+        #container.col
+        each item in pageData.name[0]
+            span #{item}
+            | &nbsp;

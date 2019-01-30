@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+span {
+  white-space: normal;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
