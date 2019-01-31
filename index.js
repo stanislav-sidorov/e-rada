@@ -38,7 +38,7 @@ const axios = require('axios');
         var depData = jsonContent.mps[i].declarations[0];
         if (depData && depData.transports) {
         console.log("DepFullName:", depData.fullname);
-            name1 = depData.fullname + "\n";
+            name1 = depData.fullname + " - ";
         } else {
             console.log(jsonContent.mps[i].surname, jsonContent.mps[i].firstname, jsonContent.mps[i].patronymic);
             name1 = jsonContent.mps[i].surname + " " + jsonContent.mps[i].firstname + " " + jsonContent.mps[i].patronymic;
@@ -49,8 +49,10 @@ const axios = require('axios');
                 if (depData.transports[a].model) {
                     console.log("Car:", depData.transports[a].model, depData.transports[a].year_create);
                     if ((a+1) == depData.transports.length)
-                    depCar += depData.transports[a].model + " " + depData.transports[a].year_create;
-                    else depCar += depData.transports[a].model + " " + depData.transports[a].year_create + "\n";
+                    depCar += depData.transports[a].model + " " + depData.transports[a].year_create + ".";
+
+                    else if (a == 0) depCar +=  depData.transports[a].model + " " + depData.transports[a].year_create + ", ";
+                    else depCar += depData.transports[a].model + " " + depData.transports[a].year_create + ", ";
                 }
             }
         }

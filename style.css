@@ -4,7 +4,9 @@
 }
 
 span {
-  white-space: normal;
+  white-space: pre;
+  clear: both;
+  float: left;
 }
 
 .container {
